@@ -1,0 +1,56 @@
+@import '/src/vars.scss';
+
+.ByLink {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+  width: fit-content;
+  padding: 0.6em 2.9em;
+
+  font-size: 1.042vw;
+  font-weight: 600;
+  color: var(--dark);
+
+  border-radius: 0.21vw;
+  background-color: var(--button);
+
+  transform: translate(-2px, -2px);
+
+  transition: background-color var(--duration);
+
+  @include portrait-orientation {
+    border-radius: 4px;
+
+    font-size: 20px;
+  }
+
+  &:hover {
+    background-color: var(--button-hover);
+  }
+
+  &__wrapper {
+    position: relative;
+
+    width: fit-content;
+
+    &::before {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: block;
+
+      border-radius: 0.21vw;
+      background-color: var(--button-shadow);
+
+      @include portrait-orientation {
+        border-radius: 4px;
+      }
+    }
+  }
+}

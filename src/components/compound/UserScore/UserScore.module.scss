@@ -1,0 +1,9 @@
+@import '/src/vars.scss';
+
+.UserScore {
+  width: 45.94vw;
+
+  @include portrait-orientation {
+    width: 100%;
+  }
+}

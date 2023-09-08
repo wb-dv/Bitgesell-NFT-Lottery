@@ -1,0 +1,85 @@
+@import '/src/vars.scss';
+
+.Token {
+  position: relative;
+  width: 2.29vw;
+  height: 2.71vw;
+
+  margin-right: 0.21vw;
+  margin-bottom: 0.885vw;
+
+  background-image: url('/src/assets/img/token__placeholder.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::after {
+    content: attr(data-count);
+    position: absolute;
+    bottom: -0.9vw;
+
+    display: block;
+    width: 100%;
+
+    text-align: center;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 0.73vw;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include portrait-orientation($mtab-r) {
+    min-width: 44px;
+    min-height: 52px;
+
+    margin-right: 4px;
+    margin-bottom: 36px;
+
+    &::after {
+      bottom: -30px;
+
+      font-size: 25px;
+    }
+  }
+
+  &__Common {
+    @for $i from 1 through 8 {
+      &_#{$i} {
+        background-image: url('/src/assets/img/tokens/common_#{$i}.png'), url('/src/assets/img/token__placeholder.png');
+      }
+    }
+  }
+
+  &__Special {
+    @for $i from 1 through 15 {
+      &_#{$i} {
+        background-image: url('/src/assets/img/tokens/special_#{$i}.png'), url('/src/assets/img/token__placeholder.png');
+      }
+    }
+  }
+
+  &__Rare {
+    @for $i from 1 through 10 {
+      &_#{$i} {
+        background-image: url('/src/assets/img/tokens/rare_#{$i}.png'), url('/src/assets/img/token__placeholder.png');
+      }
+    }
+  }
+
+  &__Unique {
+    @for $i from 1 through 4 {
+      &_#{$i} {
+        background-image: url('/src/assets/img/tokens/unique_#{$i}.png'), url('/src/assets/img/token__placeholder.png');
+      }
+    }
+  }
+
+  &__Legendary {
+    &_1 {
+      background-image: url('/src/assets/img/tokens/legendary_1.png'), url('/src/assets/img/token__placeholder.png');
+    }
+  }
+}
+

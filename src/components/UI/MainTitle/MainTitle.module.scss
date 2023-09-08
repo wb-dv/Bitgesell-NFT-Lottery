@@ -1,0 +1,30 @@
+@import '/src/vars.scss';
+
+.MainTitle {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 0.94vw;
+
+  &__h1 {
+    font-size: 2.815vw;
+    font-weight: 400;
+    font-family: var(--font-secondary);
+    text-align: center;
+    font-style: normal;
+    line-height: normal;
+    color: var(--header-green);
+  }
+
+  &__strong {
+    color: var(--white);
+  }
+
+  @include portrait-orientation($mtab-r) {
+    margin-bottom: 68px;
+    padding: 0 20px;
+
+    &__h1 {
+      font-size: 54px;
+    }
+  }
+}

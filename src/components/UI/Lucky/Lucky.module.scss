@@ -1,0 +1,13 @@
+@import '/src/vars.scss';
+
+.Lucky {
+  &__last {
+    margin: 0.625vw 0 0.729vw;
+
+    @include portrait-orientation {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+  }
+}
+

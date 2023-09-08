@@ -1,0 +1,34 @@
+@import '/src/vars.scss';
+
+.SocialLink {
+  display: block;
+  width: 3.59vw;
+  height: 3.59vw;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include portrait-orientation {
+    width: 85px;
+    height: 85px;
+  }
+
+  &.x {
+    background-image: url('@img/btns/x.png');
+  }
+
+  &.site {
+    background-image: url('@img/btns/g44.png');
+    border-radius: 0.78vw;
+
+    @include portrait-orientation {
+      width: 77px;
+      height: 77px;
+      border-radius: 0;
+    }
+  }
+
+  &.telegram {
+    background-image: url('@img/btns/telegram.png');
+  }
+}

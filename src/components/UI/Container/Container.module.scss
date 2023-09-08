@@ -1,0 +1,34 @@
+@import '/src/vars.scss';
+
+.Container {
+  position: relative;
+  z-index: 1;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  padding: 2.08vw 6.35vw;
+  margin: 0 auto;
+
+  @include portrait-orientation($bmob-r) {
+    width: 100%;
+    padding: 59px 30px 65px;
+
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: -447px;
+      bottom: -405px;
+
+      @include radial-gradient;
+    }
+  }
+
+  @include adpt-max($bmob-r) {
+    padding: 59px 0 65px 0;
+    margin: 0;
+  }
+}

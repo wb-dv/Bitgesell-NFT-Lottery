@@ -1,0 +1,55 @@
+@import '/src/vars.scss';
+
+.InfoBlock {
+  position: relative;
+  width: 19.95vw;
+
+  display: flex;
+  flex-direction: column;
+
+  @include portrait-orientation {
+    width: 100%;
+    margin-top: 108px;
+    padding-left: 20px;
+    margin-bottom: 62px;
+  }
+
+  @include adpt-min($bmob-r) {
+    padding-left: 0;
+  }
+
+  &::before {
+    @include portrait-orientation {
+      content: '';
+      position: absolute;
+      z-index: -1;
+
+      right: -443px;
+      top: -254px;
+
+      @include radial-gradient;
+    }
+  }
+
+  &::after {
+    @include portrait-orientation {
+      content: '';
+      position: absolute;
+      z-index: -1;
+
+      width: 26.4px;
+      height: 27.4px;
+
+      left: 74px;
+      bottom: -87px;
+
+      background-image: url('@img/brilliants/brilliant.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      transform: rotate(85deg);
+
+      opacity: 0.2;
+    }
+  }
+}

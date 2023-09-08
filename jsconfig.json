@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["./src/*"],
+      "@UI/*": ["./src/components/UI/*"],
+      "@compound/*": ["./src/components/compound/*"],
+      "@img/*": ["./src/assets/img/*"],
+      "@helpers/*": ["./src/helpers/*"],
+      "@api/*": ["./src/api/*"],
+      "@hooks/*": ["./src/hooks/*"]
+    }
+  },
+  "exclude": ["node_modules", "build"]
+}

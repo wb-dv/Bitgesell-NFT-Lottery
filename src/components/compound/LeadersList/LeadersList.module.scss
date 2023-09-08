@@ -1,0 +1,174 @@
+@import '/src/vars.scss';
+
+.LeadersList {
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    @include portrait-orientation($mtab-r) {
+      padding: 0;
+    }
+  }
+
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0.31vw;
+
+    @include portrait-orientation($mtab-r) {
+      margin-bottom: 6px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.header {
+      padding-right: 0.7vw;
+
+      @include portrait-orientation {
+        padding-right: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__lineItem {
+    padding: 0.34vw 0;
+
+    border-radius: var(--border-radius-search);
+
+    color: var(--white);
+    font-weight: 600;
+    text-align: center;
+
+    @include portrait-orientation($mtab-r) {
+      padding: 6px 0;
+
+      border-radius: var(--border-radius-search-mob);
+    }
+  }
+
+  &__headerItem {
+    margin-bottom: -0.2vw;
+    padding: 0.18vw;
+
+    color: var(--white);
+    font-weight: 600;
+    text-align: center !important;
+
+    @include portrait-orientation($mtab-r) {
+      margin-bottom: 7px;
+      padding: 0;
+
+      font-size: 16px;
+    }
+  }
+
+  &__leader {
+    background-color: var(--white);
+
+    font-size: 0.52vw;
+    color: var(--black);
+
+    @include portrait-orientation($mtab-r) {
+      font-size: 10px;
+    }
+  }
+
+  &__adress {
+    width: 65%;
+    padding-left: 1.4vw;
+    padding-right: 1.4vw;
+    overflow: hidden;
+
+    text-align: left;
+
+    &.LeadersList__headerItem {
+      padding: 0.18vw;
+    }
+
+    @include portrait-orientation($mtab-r) {
+      width: 53.6%;
+      padding-left: 25px;
+      padding-right: 25px;
+
+      text-overflow: ellipsis;
+    }
+
+    @include adpt-max($smob-r) {
+      padding-left: 15px;
+    }
+
+    @include adpt-max($xsmob-r) {
+      padding-left: 5px;
+    }
+  }
+
+  &__points {
+    width: 13%;
+    font-weight: 700;
+
+    @include portrait-orientation($mtab-r) {
+      width: 14%;
+    }
+  }
+
+  &__reward {
+    width: 20%;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include portrait-orientation($mtab-r) {
+      width: 30%;
+    }
+  }
+
+  &__highlight {
+    box-shadow: 0 0 30px var(--green);
+    background-color: var(--green);
+    color: var(--white);
+  }
+
+  &__scrollContainer {
+    height: 15.83vw;
+    overflow: auto;
+    padding-right: 0.5vw;
+
+    @include scrollbar;
+
+    @include portrait-orientation {
+      overflow: visible;
+      padding-right: 0;
+      height: auto;
+    }
+
+    &_noScroll {
+      overflow: visible;
+    }
+  }
+
+  &__ticketColor {
+    display: inline-block;
+    width: 0.52vw;
+    height: 0.52vw;
+    margin-right: 0.3vw;
+
+    border-radius: 50%;
+
+    @include portrait-orientation {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+    }
+  }
+}
+

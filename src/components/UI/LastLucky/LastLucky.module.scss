@@ -1,0 +1,43 @@
+@import '/src/vars.scss';
+
+.LastLucky {
+  width: 100%;
+
+  font-size: 0.729vw;
+  font-weight: 500;
+  text-align: left;
+
+  @include portrait-orientation {
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  &__strong {
+    font-weight: 800;
+  }
+
+  &__link {
+    display: block;
+
+    transition: color var(--duration);
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+
+  &__winNum {
+    font-size: 1.6em;
+    font-weight: 700;
+
+    &_1 {
+      color: var(--score-common);
+    }
+    &_2 {
+      color: var(--score-rare);
+    }
+    &_3 {
+      color: #ff6b6b;
+    }
+  }
+}
+

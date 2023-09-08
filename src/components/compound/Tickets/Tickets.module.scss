@@ -1,0 +1,90 @@
+@import '/src/vars.scss';
+
+.Tickets {
+  position: relative;
+
+  &::before {
+    @include portrait-orientation {
+      content: '';
+      position: absolute;
+      left: 33px;
+      top: -20px;
+
+      width: 26.4px;
+      height: 27.4px;
+
+      background-image: url('@img/brilliants/brilliant.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      transform: rotate(-180deg);
+    }
+  }
+
+  &::after {
+    @include portrait-orientation {
+      content: '';
+      position: absolute;
+      right: 30px;
+      top: -33px;
+
+      width: 65px;
+      height: 53.5px;
+
+      background-image: url('@img/brilliants/brilliant_violet.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      transform: rotate(-47deg);
+    }
+  }
+
+  &__field {
+    border-radius: var(--border-radius-panel);
+
+    @include portrait-orientation {
+      border-radius: var(--border-radius-panel-mob);
+    }
+  }
+
+  &__placeholder {
+    position: relative;
+
+    border-radius: var(--border-radius-panel);
+
+    background-image: url('@img/tickets_placeholder.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include portrait-orientation {
+      margin: 0 auto;
+      border-radius: var(--border-radius-panel-mob);
+    }
+  }
+
+  &__tooltip {
+    z-index: 3;
+    padding: 0.7vw !important;
+
+    background-color: rgba($color: #000000, $alpha: 0.7) !important;
+    border-radius: 0.5vw !important;
+
+    @include portrait-orientation {
+      padding: 15px !important;
+
+      border-radius: 15px !important;
+
+      font-size: 12px !important;
+    }
+
+    &_arrow {
+      opacity: 0.7 !important;
+      border-radius: 0.1vw;
+
+      @include portrait-orientation {
+        border-radius: 2px;
+      }
+    }
+  }
+}
+

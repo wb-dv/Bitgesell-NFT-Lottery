@@ -1,0 +1,136 @@
+@import '/src/vars.scss';
+
+.GradeInfo {
+  display: flex;
+  flex-wrap: nowrap;
+
+  overflow: visible;
+  max-height: 4.635vw;
+  max-width: 14.27vw;
+  margin-top: 1.2vw;
+  margin-left: 0.5vw;
+
+  @include portrait-orientation {
+    justify-content: space-between;
+
+    max-width: 341px;
+    width: 100%;
+    max-height: none;
+
+    margin-top: 37px;
+    margin-left: 0;
+  }
+
+  &__title {
+    margin-bottom: 0.47vw;
+    font-size: 0.89vw;
+    font-weight: 500;
+
+    @include portrait-orientation {
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__strong {
+    font-size: inherit;
+    font-weight: 700;
+  }
+
+  &__block {
+    &:nth-child(1) {
+      margin-right: 0.52vw;
+    }
+  }
+
+  &__list {
+    &_multi {
+      li {
+        margin-bottom: 0.7vw;
+
+        @include portrait-orientation {
+          margin-bottom: 15px;
+        }
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    padding-left: 1.35vw;
+    margin-bottom: 0.1vw;
+
+    white-space: nowrap;
+    font-size: 0.73vw;
+
+    @include portrait-orientation {
+      font-size: 14px;
+      padding-left: 26px;
+      margin-bottom: 1px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0.89vw;
+      height: 0.89vw;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include portrait-orientation {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    &.Common {
+      &_highlight {
+        @include multi-highlight;
+      }
+      &::before {
+        background-image: url('@img/brilliants/brilliant_common.svg');
+      }
+    }
+
+    &.Special {
+      &_highlight {
+        @include multi-highlight($multi-special-color);
+      }
+      &::before {
+        background-image: url('@img/brilliants/brilliant_special.svg');
+      }
+    }
+
+    &.Rare {
+      &_highlight {
+        @include multi-highlight($multi-rare-color);
+      }
+      &::before {
+        background-image: url('@img/brilliants/brilliant_rare.svg');
+      }
+    }
+
+    &.Unique {
+      &::before {
+        background-image: url('@img/brilliants/brilliant_unique.svg');
+      }
+    }
+
+    &.Legendary {
+      &::before {
+        background-image: url('@img/brilliants/brilliant_legendary.svg');
+      }
+    }
+  }
+}
+

@@ -1,0 +1,14 @@
+@import '/src/vars.scss';
+
+.Title {
+  margin-bottom: 0.57vw;
+
+  font-size: 1.094vw;
+  font-weight: 500;
+
+  @include portrait-orientation($mtab-r) {
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+  }
+}

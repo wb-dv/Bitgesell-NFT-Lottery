@@ -1,0 +1,17 @@
+@import '/src/vars.scss';
+
+.RoundCounter {
+  @include portrait-orientation {
+    font-size: 23px;
+  }
+
+  &__strong {
+    font-weight: 800;
+    font-size: 1.15vw;
+
+    @include portrait-orientation {
+      font-size: inherit;
+    }
+  }
+}
+

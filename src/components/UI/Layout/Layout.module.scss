@@ -1,0 +1,58 @@
+@import '/src/vars.scss';
+
+.Layout {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+
+  background-image: url('/src/assets/img/layouts/nft_layout.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden auto;
+
+  @include scrollbar;
+
+  @include portrait-orientation {
+    background: var(--dark-bg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -449px;
+
+      top: -519px;
+
+      @include radial-gradient;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 15px;
+
+      width: 45.5px;
+      height: 37.4px;
+
+      background-image: url('@img/brilliants/brilliant_violet.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      opacity: 0.12;
+
+      transform: rotate(203deg);
+    }
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   left: -447px;
+
+    //   bottom: -393px;
+
+    //   @include radial-gradient;
+    // }
+  }
+}

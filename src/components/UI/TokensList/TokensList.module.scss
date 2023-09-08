@@ -1,0 +1,139 @@
+@import '/src/vars.scss';
+
+.TokensList {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include portrait-orientation($mtab-r) {
+    margin-right: -11px;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-bottom: 0.65vw;
+    margin-right: 1.09vw;
+
+    &.Common {
+      // margin-top: 0;
+    }
+
+    &.Rare {
+      // margin-top: 0.4vw;
+      // margin-right: 1.3vw;
+    }
+
+    &.Unique {
+      order: 2;
+
+      @include portrait-orientation {
+        width: auto;
+        margin-right: 47px;
+      }
+    }
+
+    &.Legendary {
+      order: 2;
+      min-width: 83px;
+
+      @include portrait-orientation {
+        width: auto;
+      }
+    }
+
+    @include portrait-orientation($mtab-r) {
+      width: 100%;
+
+      margin-top: 8.5px;
+
+      &.Rare {
+        // margin-top: 12.5px;
+      }
+
+      &.Legendary {
+        // margin-top: 17.1px;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    width: fit-content;
+    height: 1.2vw;
+    margin-bottom: 0.4vw;
+
+    font-weight: 600;
+    color: var(--dark-light);
+    font-size: inherit;
+    line-height: 140%;
+
+    @include portrait-orientation($mtab-r) {
+      margin-bottom: 4px;
+      height: auto;
+
+      font-size: 26px;
+      color: var(--white);
+    }
+  }
+
+  &__countPts {
+    font-size: 0.99vw;
+    font-weight: 800;
+
+    &.Common {
+      color: var(--score-common);
+    }
+
+    &.Special {
+      color: var(--score-special);
+    }
+
+    &.Rare {
+      color: var(--score-rare);
+    }
+
+    &.Unique {
+      color: var(--score-unique);
+    }
+
+    &.Legendary {
+      position: absolute;
+      right: 0;
+      top: 2vw;
+
+      max-width: 1.7vw;
+
+      color: var(--score-legendary);
+      line-height: 1vw;
+    }
+
+    @include portrait-orientation($mtab-r) {
+      margin-left: 1vw;
+      font-size: 25px;
+
+      &.Legendary {
+        top: 43px;
+        right: auto;
+        left: 59px;
+
+        max-width: none;
+
+        line-height: 100%;
+      }
+    }
+  }
+
+  & .tokenHighlight {
+    &__Common {
+      @include multi-highlight;
+    }
+
+    &__Special {
+      @include multi-highlight($multi-special-color);
+    }
+
+    &__Rare {
+      @include multi-highlight($multi-rare-color);
+    }
+  }
+}
+

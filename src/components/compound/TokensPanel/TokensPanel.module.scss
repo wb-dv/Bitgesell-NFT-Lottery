@@ -1,0 +1,97 @@
+@import '/src/vars.scss';
+
+.TokensPanel {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 1.56vw 2.6vw 0;
+
+  background-color: var(--user-score-bg);
+  border-radius: var(--border-radius-panel);
+
+  @include portrait-orientation($mtab-r) {
+    padding: 43px 25px 77px;
+
+    border-radius: var(--border-radius-panel-mob);
+  }
+
+  &__brilliants {
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: '';
+      display: block;
+      width: 1.51vw;
+      height: 1.51vw;
+
+      position: absolute;
+      z-index: 2;
+      top: 16vw;
+      left: -1.3%;
+
+      background-image: url('@img/brilliants/brilliant.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      transform: rotate(180deg);
+
+      @include portrait-orientation {
+        content: none;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 1.67vw;
+      height: 1.67vw;
+
+      position: absolute;
+      z-index: 2;
+      top: 6.3vw;
+      right: 1.6%;
+
+      background-image: url('@img/brilliants/brilliant.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      transform: rotate(4deg);
+
+      @include portrait-orientation {
+        content: none;
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  &__search {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include portrait-orientation {
+      position: relative;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__gradeInfo {
+    order: 1;
+
+    @include portrait-orientation {
+      order: 3;
+    }
+  }
+}
+

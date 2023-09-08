@@ -1,0 +1,27 @@
+@import '/src/vars.scss';
+
+.LastPayment {
+  width: 100%;
+
+  font-size: 0.729vw;
+  font-weight: 500;
+  text-align: left;
+
+  @include portrait-orientation {
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  &__strong {
+    font-weight: 800;
+  }
+
+  &__link {
+    display: block;
+    transition: color var(--duration);
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
