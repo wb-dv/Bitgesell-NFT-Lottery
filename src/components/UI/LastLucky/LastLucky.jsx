@@ -19,16 +19,10 @@ export const LastLucky = memo(function LastLucky({ customClasses = '' }) {
     queryFn: getLastLucky,
     queryKey: ['lastLuckyHash'],
     refetchInterval: baseRefetchInterval,
-    select: (data) => {
-      if (typeof data.hash === 'string') {
-        data.hash = separateHashByWinnersNumber(data.hash, ticketsAmount);
-      }
-      return data;
-    },
     enabled: ticketsAmountSuccess,
   });
 
-  const luckyHash = isLoading ? '?' : isSuccess ? data.hash : '-';
+  const luckyHash = isLoading ? '?' : isSuccess && ticketsAmountSuccess ? separateHashByWinnersNumber(data.hash, ticketsAmount) : '-';
   const url = isSuccess ? data.href : '#';
 
   return (
@@ -43,7 +37,7 @@ export const LastLucky = memo(function LastLucky({ customClasses = '' }) {
         {Array.isArray(luckyHash.separatedHash)
           ? luckyHash.separatedHash.map((el, i) => {
               if (luckyHash.winnerNumbersIdxs.has(i)) {
-                const winTicketNum = 4 - Math.ceil(luckyHash.winnerNumberCount / 3);
+                const winTicketNum = 4 - Math.ceil(luckyHash.winnerNumberCount / luckyHash.numberDigit);
 
                 const winClass = clsx(styles.LastLucky__winNum, styles['LastLucky__winNum_' + winTicketNum]);
 

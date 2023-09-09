@@ -29,5 +29,6 @@ export const separateHashByWinnersNumber = (hash, ticketsAmount) => {
     separatedHash,
     winnerNumbersIdxs,
     winnerNumberCount: 3 * numberDigit,
+    numberDigit,
   };
 };
