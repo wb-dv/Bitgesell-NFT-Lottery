@@ -1,7 +1,7 @@
-// const baseURL = location.origin;
+const baseURL = location.origin;
 
 // для локальной разработки нужно использовать оригинальный урл бэка:
-const baseURL = 'http://185.105.88.18:8081';
+// const baseURL = 'http://185.105.88.18:8081';
 
 export const baseRefetchInterval = 3 * 60 * 1000;
 

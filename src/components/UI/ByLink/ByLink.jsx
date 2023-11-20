@@ -8,7 +8,7 @@ export const ByLink = memo(function ByLink({ customClasses }) {
     <div className={styles.ByLink__wrapper}>
       <a
         className={clsx(styles.ByLink, customClasses)}
-        href="https://opensea.io/collection/bitgesell-road"
+        href="https://opensea.io/collection/new-bitgesell-road"
         target="_blank"
         rel="noreferrer"
       >
