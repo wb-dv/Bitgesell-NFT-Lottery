@@ -9,23 +9,24 @@ import { MainPanel } from '@compound/MainPanel/MainPanel';
 import { MainFooter } from '@compound/MainFooter/MainFooter';
 
 import './App.scss';
+import { Copyright } from '@UI/Copyright/Copyright';
 
 const queryClient = new QueryClient();
 
 function App() {
-  return (
-    <Layout>
-      <QueryClientProvider client={queryClient}>
-        <Container>
-          <MainTitle />
-          <MainPanel />
-          <MainFooter />
-        </Container>
-        <ReactQueryDevtools />
-      </QueryClientProvider>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <QueryClientProvider client={queryClient}>
+                <Container>
+                    <MainTitle />
+                    <MainPanel />
+                    <MainFooter />
+                    <Copyright customClasses={'copyright'} />
+                </Container>
+                <ReactQueryDevtools />
+            </QueryClientProvider>
+        </Layout>
+    );
 }
 
 export default App;
-

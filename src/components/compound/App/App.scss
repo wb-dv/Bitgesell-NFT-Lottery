@@ -1,0 +1,9 @@
+@import '/src/vars.scss';
+
+.copyright {
+    margin-top: 2vw;
+
+    @include portrait-orientation {
+        margin-top: 44px;
+    }
+}
