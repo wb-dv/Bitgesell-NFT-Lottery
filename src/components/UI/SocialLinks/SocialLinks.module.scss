@@ -1,10 +1,39 @@
 @import '/src/vars.scss';
 
 .SocialLinks {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 
-  width: 80%;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+
+        width: 80%;
+    }
+
+    &__backLink {
+        font-size: 0.85vw;
+
+        // font-size: 0.729vw;
+        font-weight: 500;
+        margin-top: 1vw;
+        text-align: center;
+
+        > a {
+            display: inline-block;
+            margin-left: 5px;
+            color: var(--button);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        @include portrait-orientation {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    }
 }
-
